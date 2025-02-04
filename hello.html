@@ -11,29 +11,88 @@
     <h1>Hello Domestika</h1>
     <canvas width="600" height="600"></canvas>
     <script>
-        let year = 2025;
-        let nextYear = year + 1;
+        // let year = 2025;
+        // let nextYear = year + 1;
 
-        let dinner = "salad";
-        let sentence = "I had " + dinner + " for dinner";
+        // let dinner = "salad";
+        // let sentence = "I had " + dinner + " for dinner";
 
-        function doSomething() {
-            let dinner = "pizza";
-            let sentence = "I had " + dinner + " for dinner";
-            console.log(param);
+        // function doSomething() {
+        //     let dinner = "pizza";
+        //     let sentence = "I had " + dinner + " for dinner";
+        //     console.log(param);
+        // };
+
+        // function saySomething(param) {
+        //     console.log(param);
+        // };
+        // saySomething("hey there!");
+
+        // function add(a, b) {
+        //     return a + b;
+        // }
+
+        // let result = add(2, 3);
+        // console.log(result);
+
+        // let multiply = (a, b) => {
+        //     return a * b;
+        // }
+        // console.log(multiply(2, 3));
+
+        let canvas = document.querySelector("canvas");
+        let ctx = canvas.getContext("2d");
+
+        // RECTANGLE
+        ctx.fillStyle = "red";
+        // ctx.fillRect(50, 50, 400, 400);
+
+        ctx.lineWidth = 4;
+        ctx.beginPath();
+        ctx.rect(100, 100, 400, 400);
+        // ctx.stroke();
+
+        // CIRCLE
+        ctx.beginPath();
+        ctx.arc(300, 300, 100, 0, Math.PI * 2);
+        // ctx.stroke();
+
+        for (let i = 0; i < 5; i++) {
+            for (let j = 0; j < 5; j++) {
+                let width = 60;
+                let height = 60;
+                let gap = 20;
+                let x = 100 + (width + gap) * i;
+                let y = 100 + (height + gap) * j;
+
+                ctx.beginPath();
+                ctx.rect(x, y, width, height);
+                ctx.stroke();
+
+                // if (i > 0 && i < 4) {
+                //     ctx.beginPath();
+                //     ctx.rect(x + 8, y + 8, width - 16, height - 16);
+                //     ctx.stroke();
+
+                if (Math.random() > 0.5) {
+                    ctx.beginPath();
+                    ctx.rect(x + 8, y + 8, width - 16, height - 16);
+                    ctx.strokeStyle = "tomato";
+                    ctx.stroke();
+                };
+            };
         };
 
-        function saySomething(param) {
-            console.log(param);
-        };
-        saySomething("hey there!");
+        // let width = 60;
+        // let height = 60;
+        // let gap = 20;
+        // let x = 100 + (width + gap) * i;
+        // let y = 100;
 
-        function add(a, b) {
-            return a + b;
-        }
+        // ctx.beginPath();
+        // ctx.rect(x, y, width, height);
+        // ctx.stroke();
 
-        let result = add(2, 3);
-        console.log(result);
     </script>
 </body>
 
