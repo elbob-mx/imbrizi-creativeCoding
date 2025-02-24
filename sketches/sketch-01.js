@@ -1,7 +1,7 @@
 const canvasSketch = require("canvas-sketch");
 
 const settings = {
-    dimensions: [2048, 2048],
+    dimensions: [600, 600],
 };
 
 const sketch = () => {
@@ -22,11 +22,13 @@ const sketch = () => {
 
                 context.beginPath();
                 context.rect(x, y, w, h);
+                context.strokeStyle = "red";
                 context.stroke();
 
                 if (Math.random() > 0.5) {
                     context.beginPath();
                     context.rect(x + 8, y + 8, w - 16, h - 16);
+                    context.strokeStyle = "blue";
                     context.stroke();
                 }
             }
